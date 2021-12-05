@@ -144,51 +144,54 @@ const quotes = [
  * `colors` array
  ****************/
 /*** 
- * In order to maintain some control over the aesthetic, pre-selected color schemes are stored in this array to be randomized later.
+ * Pre-selected color schemes are stored in this array to be randomized later.
+ * I've chosen this method in order to:
+ * Coordinate the background and button colors.
+ * Maintain control over the aesthetic of the final product.
 ***/
 const colors = [
   {
-    background: '#DE07C5',
+    background: '#DE07C5', //Hot Pink
     button: '#B506A1'
   },
   {
-    background: '#842DF7',
+    background: '#842DF7', //Barney Purple
     button: '#6D09F0'
   },
   {
-    background: '#2DC8F7',
+    background: '#2DC8F7', //Sky Blue
     button: '#09BAF0'
   },
   {
-    background: '#F79F2B',
+    background: '#F79F2B', //Mustard
     button: '#F08C09'
   },
   {
-    background: '#916591',
+    background: '#916591', //Lavender
     button: '#7C567C'
   },
   {
-    background: '#CE6D8B',
+    background: '#CE6D8B', //Dusky Pink
     button: '#C34C72'
   },
   {
-    background: '#540F84',
+    background: '#540F84', //Dark Purple
     button: '#480D72'
   },
   {
-    background: '#850F65',
+    background: '#850F65', //Dark Fuscia
     button: '#720D57'
   },
   {
-    background: '#386C0B',
+    background: '#386C0B', //Green
     button: '#305B09'
   },
   {
-    background: '#23022E',
+    background: '#23022E', //Darkest Purple
     button: '#1D0226'
   },
   {
-    background: '#6B0F1A',
+    background: '#6B0F1A', //Crimson
     button: '#5C0D16'
   }
 ]
@@ -239,13 +242,16 @@ function getRandomColor () {
     let body = document.body;
     let button = document.getElementById('load-quote');
 
-         body.style.backgroundColor = randomColor.background;
+    body.style.backgroundColor = randomColor.background;
    return button.style.backgroundColor= randomColor.button;
  }
 
 /***********************
  * `resetTimer` function
  **********************/
+/***
+ * Starts `timer` interval.
+ */
 function startTimer() {
   timer= setInterval ('printQuote()',5000);
 }
@@ -253,6 +259,9 @@ function startTimer() {
 /***********************
  * `clearTimer` function
  **********************/
+/***
+ * Clears `timer` interval.
+ ***/  
 function clearTimer() {
    clearInterval(timer);
 }
@@ -274,22 +283,25 @@ function printQuote () {
   let quote = '<p class="quote">' + randomQuote.quote + '</p>';
       quote += '<p class="source">' + randomQuote.source;
     
-    if (randomQuote.epithet) {
+    //Checks to see if there is an 'epithet' property and adds it to the displayed string.
+    if (randomQuote.epithet) { 
       quote += '<span class="citation">' + randomQuote.epithet + '</span>';
     }  
-
+    //Checks to see if there is an 'citation' property and adds it to the displayed string.
     if (randomQuote.citation) {
       quote += '<span class="citation">' + randomQuote.citation + '</span>';
     } 
-
+    //Checks to see if there is an 'year' property and adds it to the displayed string.
     if (randomQuote.year) {
       quote += '<span class="year">' + randomQuote.year + '</span>';
     }
-
+    //Adds the closing tag to the displayed string.
       quote += '</p>';
-
+  // Changes the background and button colors.
   changeColor();
+  //Resets `timer` interval.
   clearTimer(timer);
+  //Restarts 'timer' interval.
   startTimer();
   return quoteBox.innerHTML= quote;
 }
