@@ -16,6 +16,7 @@ Improvements
     Design
     I made minor yet impactful changes to the original design. I removed the box surrounding the quote and underline beneath the heading. This yields a cleaner more modern UI.
     I've chosen a google font, Sue Ellen Francisco, which compliments the theme of my content.
+    I've also added a transition to the background color change to match that which already existed on the button.
 
 Challenges
 
