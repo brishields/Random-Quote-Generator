@@ -9,7 +9,7 @@ Task
      4. Restart the `timer` interval when the button is clicked.
 
 Languages
-S
+
     HTML5
     CSS3
     JavaScript
