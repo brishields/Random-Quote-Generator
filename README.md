@@ -6,7 +6,13 @@ Task
      1. Randomly chooses a quote stored in an array to display.
      2. Changes the background to a random color along with the quote on a set timer interval and upon clicking the button.
      3. Automatically changes the quote and background color at certain time intervals.
-     4. Restart the `timer` interval when the button is pressed.
+     4. Restart the `timer` interval when the button is clicked.
+
+Languages
+S
+    HTML5
+    CSS3
+    JavaScript
 
 Improvements
 
